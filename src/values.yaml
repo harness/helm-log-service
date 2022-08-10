@@ -7,7 +7,7 @@ global:
     endpoint: ""
     bucketName: ""
     region: ""
-    accessKey: ""
+    accessKeyId: ""
     secretAccessKey: ""
 replicaCount: 1
 maxSurge: 1
