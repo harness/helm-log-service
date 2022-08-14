@@ -2,13 +2,15 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 global:
-  loadbalancerURL: "http://test/abc"
-  s3:
-    endpoint: ""
-    bucketName: ""
-    region: ""
-    accessKeyId: ""
-    secretAccessKey: ""
+  loadbalancerURL: ""
+
+s3:
+  endpoint: ""
+  bucketName: ""
+  region: ""
+  accessKeyId: ""
+  secretAccessKey: ""
+  
 replicaCount: 1
 maxSurge: 1
 maxUnavailable: 0
