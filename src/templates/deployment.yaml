@@ -34,8 +34,24 @@ spec:
         envFrom:
         - configMapRef:
             name: log-service
-        - secretRef:
-            name: log-service
+        env:
+          {{- if .Values.s3.accessKeyId }}
+          - name: LOG_SERVICE_S3_ACCESS_KEY_ID
+            value: {{ .Values.s3.accessKeyId  }}
+          - name: LOG_SERVICE_S3_SECRET_ACCESS_KEY
+            value: {{ .Values.s3.secretAccessKey }}
+          {{- else }}
+          - name: LOG_SERVICE_S3_ACCESS_KEY_ID
+            valueFrom:
+              secretKeyRef:
+                name: minio
+                key: accesskey
+          - name: LOG_SERVICE_S3_SECRET_ACCESS_KEY
+            valueFrom:
+              secretKeyRef:
+                name: minio
+                key: secretkey
+          {{- end }}
         livenessProbe:
           httpGet:
             path: /healthz
