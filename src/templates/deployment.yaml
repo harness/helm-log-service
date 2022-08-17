@@ -45,12 +45,12 @@ spec:
             valueFrom:
               secretKeyRef:
                 name: minio
-                key: accesskey
+                key: rootUser
           - name: LOG_SERVICE_S3_SECRET_ACCESS_KEY
             valueFrom:
               secretKeyRef:
                 name: minio
-                key: secretkey
+                key: rootPassword
           {{- end }}
         livenessProbe:
           httpGet:
