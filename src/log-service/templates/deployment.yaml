@@ -25,7 +25,7 @@ spec:
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
-      {{- end }}  
+      {{- end }}
       serviceAccountName: {{ include "log-service.serviceAccountName" . }}
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
@@ -64,7 +64,7 @@ spec:
             port: http-log-svc
           initialDelaySeconds: 10
           periodSeconds: 10
-        image: {{ include "harnesscommon.names.imagename" . }}
+        image: {{ include "common.images.image" (dict "imageRoot" .Values.image "global" .Values.global) }}
         imagePullPolicy: {{ .Values.image.pullPolicy }}
         securityContext:
           {{- toYaml .Values.securityContext | nindent 12 }}
@@ -73,8 +73,8 @@ spec:
           containerPort: {{ .Values.service.port }}
           protocol: "TCP"
         resources:
-          {{- toYaml .Values.resources | nindent 12 }}     
-      affinity: 
+          {{- toYaml .Values.resources | nindent 12 }}
+      affinity:
         podAntiAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
           - labelSelector:
