@@ -3,7 +3,21 @@ entries:
   log-service:
   - apiVersion: v2
     appVersion: 0.0.1
-    created: "2022-08-18T01:36:11.319398+05:30"
+    created: "2022-08-23T00:37:21.299993+05:30"
+    dependencies:
+    - name: harness-common
+      repository: https://harness.github.io/helm-common/charts
+      version: 0.1.1
+    description: A Helm chart for Kubernetes
+    digest: b847d74366447faf50af7be0e75e61a2671607ea0ec59b50ad487ddee23a9507
+    name: log-service
+    type: application
+    urls:
+    - log-service-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
+    appVersion: 0.0.1
+    created: "2022-08-23T00:37:21.299006+05:30"
     dependencies:
     - name: harness-common
       repository: https://harness.github.io/helm-common/charts
@@ -15,4 +29,4 @@ entries:
     urls:
     - log-service-0.1.0.tgz
     version: 0.1.0
-generated: "2022-08-18T01:36:11.3183+05:30"
+generated: "2022-08-23T00:37:21.296596+05:30"
