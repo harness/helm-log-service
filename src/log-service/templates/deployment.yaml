@@ -44,13 +44,13 @@ spec:
           - name: LOG_SERVICE_S3_ACCESS_KEY_ID
             valueFrom:
               secretKeyRef:
-                name: minio
-                key: root-user
+                name: {{ .Values.logServiceS3AccessKeyID.name }}
+                key: {{ .Values.logServiceS3AccessKeyID.key }}
           - name: LOG_SERVICE_S3_SECRET_ACCESS_KEY
             valueFrom:
               secretKeyRef:
-                name: minio
-                key: root-password
+                name: {{ .Values.logServiceS3SecretAccessKey.name }}
+                key: {{ .Values.logServiceS3SecretAccessKey.key }}
           {{- end }}
         livenessProbe:
           httpGet:

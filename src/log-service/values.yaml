@@ -23,6 +23,14 @@ image:
   tag: "release-18"
   digest: ""
 
+logServiceS3AccessKeyID:
+  name: minio
+  key: root-user
+
+logServiceS3SecretAccessKey:
+  name: minio
+  key: root-password
+
 nameOverride: ""
 fullnameOverride: ""
 
