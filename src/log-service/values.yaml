@@ -16,7 +16,7 @@ maxSurge: 1
 maxUnavailable: 0
 
 image:
-  registry: deocker.io
+  registry: docker.io
   repository: harness/log-service-signed
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
