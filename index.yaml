@@ -3,6 +3,23 @@ entries:
   log-service:
   - apiVersion: v2
     appVersion: 0.0.1
+    created: "2022-08-23T07:37:56.036089873Z"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      version: 2.x.x
+    - name: harness-common
+      repository: https://harness.github.io/helm-common
+      version: 1.x.x
+    description: A Helm chart for Kubernetes
+    digest: fa60eee5964923518bce8fc05f74c60877bc49bcd24f7b190a299978df9c4224
+    name: log-service
+    type: application
+    urls:
+    - https://github.com/harness/helm-log-service/releases/download/log-service-0.2.2/log-service-0.2.2.tgz
+    version: 0.2.2
+  - apiVersion: v2
+    appVersion: 0.0.1
     created: "2022-08-22T22:14:38.656257114Z"
     dependencies:
     - name: common
@@ -18,4 +35,4 @@ entries:
     urls:
     - https://github.com/harness/helm-log-service/releases/download/log-service-0.2.0/log-service-0.2.0.tgz
     version: 0.2.0
-generated: "2022-08-22T22:14:38.656263414Z"
+generated: "2022-08-23T07:37:56.036099273Z"
