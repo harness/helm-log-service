@@ -5,9 +5,10 @@ global:
   loadbalancerURL: ""
 
 s3:
+  ### Default values are configured to work with Minio, override if you are using own s3 buckets
   endpoint: ""
-  bucketName: ""
-  region: ""
+  bucketName: "logs"
+  region: "us-east-1"
   accessKeyId: ""
   secretAccessKey: ""
 
