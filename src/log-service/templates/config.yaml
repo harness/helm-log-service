@@ -4,21 +4,9 @@ metadata:
   name: log-service
   namespace: {{ .Release.Namespace }}
 data:
-  {{- if .Values.s3.bucketName }}
   LOG_SERVICE_S3_BUCKET: {{ .Values.s3.bucketName }}
-  {{- else }}
-  LOG_SERVICE_S3_BUCKET: logs
-  {{- end }}
-  {{- if .Values.s3.region }}
   LOG_SERVICE_S3_REGION: {{ .Values.s3.region }}
-  {{- else }}
-  LOG_SERVICE_S3_REGION: us-east-1
-  {{- end }}
-  {{- if .Values.s3.endpoint }}
-  LOG_SERVICE_S3_ENDPOINT: {{ .Values.s3.endpoint }}
-  {{- else }}
-  LOG_SERVICE_S3_ENDPOINT: '{{  .Values.global.loadbalancerURL }}'
-  {{- end }}
+  LOG_SERVICE_S3_ENDPOINT: {{ .Values.s3.endpoint | default .Values.global.loadbalancerURL }}
   LOG_SERVICE_S3_PATH_STYLE: "true"
   LOG_SERVICE_DISABLE_AUTH: "true"
   LOG_SERVICE_GLOBAL_TOKEN: c76e567a-b341-404d-a8dd-d9738714eb82
