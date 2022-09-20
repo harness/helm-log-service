@@ -3,6 +3,8 @@
 # Declare variables to be passed into your templates.
 global:
   loadbalancerURL: ""
+  ingress:
+    useSelfSignedCert: false
 
 s3:
   ### Default values are configured to work with Minio, override if you are using own s3 buckets
