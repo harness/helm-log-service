@@ -13,7 +13,6 @@ s3:
   region: "us-east-1"
   accessKeyId: ""
   secretAccessKey: ""
-  defaultMinioUrl: 'http://minio.{{ .Release.Namespace }}.svc.cluster.local:9000'
 
 replicaCount: 1
 maxSurge: 1
